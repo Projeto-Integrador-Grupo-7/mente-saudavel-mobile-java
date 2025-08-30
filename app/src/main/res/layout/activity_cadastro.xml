@@ -9,7 +9,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:layout_marginBottom="130dp"
         android:text="@string/mente_saudavel"
         android:textAlignment="center"
         android:textSize="45sp"
@@ -22,13 +21,26 @@
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="30dp"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleMenteSaudavel"
         app:layout_constraintWidth_percent="0.75">
+
+        <TextView
+            android:id="@+id/lblNome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nome" />
+
+        <EditText
+            android:id="@+id/txtNome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text" />
 
         <TextView
             android:id="@+id/lblEmail"
@@ -57,39 +69,62 @@
             android:inputType="textPassword" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/lblRepetirSenha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Esqueci minha senha" />
+            android:text="Repita a senha" />
+
+        <EditText
+            android:id="@+id/txtRepetirSenha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPassword" />
+
+        <TextView
+            android:id="@+id/lblDataNascimento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Data Nascimento" />
+
+        <EditText
+            android:id="@+id/dtDataNascimento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="date" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
-        android:layout_marginBottom="100dp"
-        android:orientation="vertical"
+        android:layout_marginTop="70dp"
         android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintWidth_percent="0.9">
 
         <Button
-            android:id="@+id/btnLogin"
-            android:layout_width="250dp"
+            android:id="@+id/btnJaPossuoConta"
+            android:layout_width="175dp"
             android:layout_height="wrap_content"
-            android:onClick="logar"
-            android:text="Login"
+            android:onClick="redirectToLogin"
+            android:text="Já possuo conta"
             app:cornerRadius="15dp" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
         <Button
             android:id="@+id/btnCadastrar"
-            android:layout_width="250dp"
+            android:layout_width="175dp"
             android:layout_height="wrap_content"
-            android:onClick="redirectToCadastro"
+            android:onClick="cadastrar"
             android:text="Cadastrar"
             app:cornerRadius="15dp" />
     </LinearLayout>
