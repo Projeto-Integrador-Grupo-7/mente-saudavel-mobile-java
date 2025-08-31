@@ -3,20 +3,20 @@
     <item
         android:id="@+id/menu_home"
         android:orderInCategory="100"
-        android:title="Página Inicial" />
+        android:title="@string/home" />
 
     <item
         android:id="@+id/menu_questionario"
         android:orderInCategory="100"
-        android:title="Questionário" />
+        android:title="@string/questionario" />
 
     <item
         android:id="@+id/menu_dashboard"
         android:orderInCategory="100"
-        android:title="Dashboard" />
+        android:title="@string/dashboard" />
 
     <item
         android:id="@+id/menu_sair"
         android:orderInCategory="100"
-        android:title="Sair" />
+        android:title="@string/logoff" />
 </menu>

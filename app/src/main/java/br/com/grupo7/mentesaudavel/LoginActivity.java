@@ -49,7 +49,6 @@ public class LoginActivity extends AppCompatActivity {
         if (!Objects.equals(email, "teste@email.com") ||
             !Objects.equals(senha, "teste")) {
             Toast.makeText(this, "Email ou senha inválidos!", Toast.LENGTH_LONG).show();
-            return;
         }
     }
 

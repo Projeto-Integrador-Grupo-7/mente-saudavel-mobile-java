@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">Mente Saudável</string>
+    <!-- Páginas/Menu -->
+    <string name="login">Login</string>
+    <string name="home">Página Inicial</string>
+    <string name="questionario">Questionário</string>
+    <string name="resultado">Resultado</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="relatorio">Relatório</string>
+    <string name="logoff">Sair</string>
+    <!-- Campos -->
+    <string name="nome">Nome</string>
+    <string name="email">Email</string>
+    <string name="senha">Senha</string>
+    <string name="repetirSenha">Repita a senha</string>
+    <string name="dataNascimento">Data Nascimento</string>
+    <!-- Botões -->
+    <string name="jaPossuoConta">Já possuo conta</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="esqueciMinhaSenha">Esqueci minha senha</string>
+    <!-- Mensagens -->
+    <string name="msgBoasVindas">Bem vindo ao sistema Mente Saudável!</string>
+    <string name="msgApresentacao">O sistema tem como objetivo monitorar a saúde mental dos trabalhadores empregando o questionário Self-Reporting Questionnaire-20 (SRQ-20).  Sinta-se a vontade para responder o questionário. As respostas serão utilizadas em relatórios, médias e gráficos para análise de métricas, porém seu nome nunca será divulgado.</string>
 </resources>

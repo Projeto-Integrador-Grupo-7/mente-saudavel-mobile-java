@@ -34,7 +34,8 @@
             android:id="@+id/lblNome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nome" />
+            android:labelFor="@+id/txtNome"
+            android:text="@string/nome" />
 
         <EditText
             android:id="@+id/txtNome"
@@ -47,7 +48,8 @@
             android:id="@+id/lblEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Email" />
+            android:labelFor="@+id/txtEmail"
+            android:text="@string/email" />
 
         <EditText
             android:id="@+id/txtEmail"
@@ -60,7 +62,8 @@
             android:id="@+id/lblSenha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Senha" />
+            android:labelFor="@+id/txtSenha"
+            android:text="@string/senha" />
 
         <EditText
             android:id="@+id/txtSenha"
@@ -73,7 +76,8 @@
             android:id="@+id/lblRepetirSenha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Repita a senha" />
+            android:labelFor="@+id/txtRepetirSenha"
+            android:text="@string/repetirSenha" />
 
         <EditText
             android:id="@+id/txtRepetirSenha"
@@ -86,7 +90,8 @@
             android:id="@+id/lblDataNascimento"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Data Nascimento" />
+            android:labelFor="@+id/dtDataNascimento"
+            android:text="@string/dataNascimento" />
 
         <EditText
             android:id="@+id/dtDataNascimento"
@@ -113,7 +118,7 @@
             android:layout_width="175dp"
             android:layout_height="wrap_content"
             android:onClick="redirectToLogin"
-            android:text="Já possuo conta"
+            android:text="@string/jaPossuoConta"
             app:cornerRadius="15dp" />
 
         <Space
@@ -126,7 +131,7 @@
             android:layout_width="175dp"
             android:layout_height="wrap_content"
             android:onClick="cadastrar"
-            android:text="Cadastrar"
+            android:text="@string/cadastrar"
             app:cornerRadius="15dp" />
     </LinearLayout>
 

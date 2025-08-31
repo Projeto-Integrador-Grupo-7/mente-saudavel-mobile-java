@@ -35,7 +35,8 @@
             android:id="@+id/lblEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Email" />
+            android:labelFor="@+id/txtEmail"
+            android:text="@string/email" />
 
         <EditText
             android:id="@+id/txtEmail"
@@ -48,7 +49,8 @@
             android:id="@+id/lblSenha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Senha" />
+            android:labelFor="@+id/txtSenha"
+            android:text="@string/senha" />
 
         <EditText
             android:id="@+id/txtSenha"
@@ -61,7 +63,7 @@
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Esqueci minha senha" />
+            android:text="@string/esqueciMinhaSenha" />
     </LinearLayout>
 
     <LinearLayout
@@ -83,7 +85,7 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:onClick="logar"
-            android:text="Login"
+            android:text="@string/login"
             app:cornerRadius="15dp" />
 
         <Button
@@ -91,7 +93,7 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:onClick="redirectToCadastro"
-            android:text="Cadastrar"
+            android:text="@string/cadastrar"
             app:cornerRadius="15dp" />
     </LinearLayout>
 

@@ -19,13 +19,13 @@
             android:id="@+id/btnQuestionario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Responder Questionário" />
+            android:text="@string/questionario" />
 
         <Button
             android:id="@+id/btnRelatorio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Relatório" />
+            android:text="@string/relatorio" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
