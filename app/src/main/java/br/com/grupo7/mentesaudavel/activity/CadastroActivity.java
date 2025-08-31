@@ -1,6 +1,5 @@
-package br.com.grupo7.mentesaudavel;
+package br.com.grupo7.mentesaudavel.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -8,8 +7,7 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+import br.com.grupo7.mentesaudavel.R;
 
 public class CadastroActivity extends AppCompatActivity {
     EditText txtNome, txtEmail, txtSenha, txtRepetirSenha, dtDataNascimento;

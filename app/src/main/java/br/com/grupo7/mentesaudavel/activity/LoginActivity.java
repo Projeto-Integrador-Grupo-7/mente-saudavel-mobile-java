@@ -1,4 +1,4 @@
-package br.com.grupo7.mentesaudavel;
+package br.com.grupo7.mentesaudavel.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Objects;
+
+import br.com.grupo7.mentesaudavel.R;
 
 public class LoginActivity extends AppCompatActivity {
     EditText txtEmail, txtSenha;

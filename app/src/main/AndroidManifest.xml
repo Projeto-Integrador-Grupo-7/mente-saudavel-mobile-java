@@ -12,12 +12,12 @@
         android:theme="@style/Theme.MenteSaudavel">
 
         <activity
-            android:name=".CadastroActivity"
+            android:name=".activity.CadastroActivity"
             android:theme="@style/Theme.MenteSaudavel.NoActionBar" />
 
 
         <activity
-            android:name=".LoginActivity"
+            android:name=".activity.LoginActivity"
             android:exported="true"
             android:theme="@style/Theme.MenteSaudavel.NoActionBar" >
             <intent-filter>
@@ -26,9 +26,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".HomeActivity" />
+        <activity android:name=".activity.HomeActivity" />
 
-        <activity android:name=".DashboardActivity" />
+        <activity android:name=".activity.DashboardActivity" />
     </application>
 
 </manifest>
