@@ -1,6 +1,9 @@
 package br.com.grupo7.mentesaudavel;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class HomeActivity extends AppCompatActivity {
@@ -8,5 +11,10 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+    }
+
+    public void redirectToDashboard(View v) {
+        Intent telaDashboard = new Intent(HomeActivity.this, DashboardActivity.class);
+        startActivity(telaDashboard);
     }
 }

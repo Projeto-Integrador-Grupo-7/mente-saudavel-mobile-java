@@ -1,31 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="212dp"
+
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/header">
 
-        <include layout="@layout/header" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Bem vindo ao sistema Mente Saudável!" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="O sistema tem como objetivo monitorar a saúde mental dos trabalhadores empregando o questionário Self-Reporting Questionnaire-20 (SRQ-20).  Sinta-se a vontade para responder o questionário. As respostas serão utilizadas em relatórios, médias e gráficos para análise de métricas, porém seu nome nunca será divulgado." />
     </LinearLayout>
 
     <LinearLayout
@@ -45,11 +42,10 @@
             android:text="Responder Questionário" />
 
         <Button
-            android:id="@+id/btnDashboard"
+            android:id="@+id/btnRelatorio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="redirectToDashboard"
-            android:text="Dashboard" />
+            android:text="Relatório" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -31,8 +31,7 @@ public class CadastroActivity extends AppCompatActivity {
 
     // btnJaPossuoConta click
     public void redirectToLogin(View v) {
-        Intent telaLogin = new Intent(this, LoginActivity.class);
-        startActivity(telaLogin);
+        this.finish();
     }
 
     // btnCadastrar click
@@ -54,7 +53,7 @@ public class CadastroActivity extends AppCompatActivity {
     }
 
     private void salvarUsuario(Bundle dados) {
-
+        this.finish();
     }
 
     private void validarDados(String email, String senha, String dataNascimento) {
