@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_home"
+        android:orderInCategory="100"
+        android:title="Página Inicial" />
+
+    <item
+        android:id="@+id/menu_questionario"
+        android:orderInCategory="100"
+        android:title="Questionário" />
+
+    <item
+        android:id="@+id/menu_dashboard"
+        android:orderInCategory="100"
+        android:title="Dashboard" />
+
+    <item
+        android:id="@+id/menu_sair"
+        android:orderInCategory="100"
+        android:title="Sair" />
+</menu>
