@@ -23,6 +23,7 @@ public class CadastroActivity extends AppCompatActivity {
         txtSenha = findViewById(R.id.txtSenha);
         txtRepetirSenha = findViewById(R.id.txtRepetirSenha);
         dtDataNascimento = findViewById(R.id.dtDataNascimento);
+
         btnJaPossuoConta = findViewById(R.id.btnJaPossuoConta);
         btnCadastrar = findViewById(R.id.btnCadastrar);
     }
@@ -39,7 +40,7 @@ public class CadastroActivity extends AppCompatActivity {
         String senha = txtSenha.getText().toString();
         String dataNascimento = txtSenha.getText().toString();
 
-        //validarDados(email, senha, dataNascimento);
+        validarDados(email, senha, dataNascimento);
 
         Bundle dados = new Bundle();
         dados.putString("nome", nome);
@@ -60,26 +61,15 @@ public class CadastroActivity extends AppCompatActivity {
         validarDataNascimento(dataNascimento);
     }
 
-    private void validarEmail(String email) throws IllegalArgumentException {
-        if (email.isEmpty()) {
-            throw new IllegalArgumentException("Email não pode ser vazio");
-        }
+    private void validarEmail(String email) {
+        // Aplicar regras básicas para validação de email
     }
 
-    private void validarSenha(String senha) throws IllegalArgumentException {
-        if (senha.length() < 4) {
-            throw new IllegalArgumentException("Senha deve ter no mínimo 4 dígitos");
-        }
+    private void validarSenha(String senha) {
+        // Aplicar regras básicas para validação de senha
     }
 
-    private void validarDataNascimento(String dataNascimento) throws IllegalArgumentException {
-        if (dataNascimento.isEmpty()) {
-            dtDataNascimento.setError("Campo obrigatório");
-            throw new IllegalArgumentException("Data de nascimento deve ser preenchida");
-        }
-
-        //LocalDate data = LocalDate.parse(dataNascimento, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-
-        //if ()
+    private void validarDataNascimento(String dataNascimento) {
+        // Aplicar regras básicas para validação de data de nascimento
     }
 }

@@ -5,11 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.util.Objects;
 
 import br.com.grupo7.mentesaudavel.R;
 
@@ -39,6 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         String senha = txtSenha.getText().toString();
 
         autenticarUsuario(email, senha);
+        // Caso usuário não for autenticado corretamente, deve interromper o fluxo
 
         Bundle dados = new Bundle();
         dados.putString("email", email);
@@ -48,10 +46,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void autenticarUsuario(String email, String senha) {
-        if (!Objects.equals(email, "teste@email.com") ||
-            !Objects.equals(senha, "teste")) {
-            Toast.makeText(this, "Email ou senha inválidos!", Toast.LENGTH_LONG).show();
-        }
+        // Chamar API para autenticação
     }
 
     private void redirectToHome(Bundle dados) {
