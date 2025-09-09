@@ -12,15 +12,21 @@ import java.util.List;
 
 import br.com.grupo7.mentesaudavel.R;
 import br.com.grupo7.mentesaudavel.adapter.HistoricoAdapter;
+import br.com.grupo7.mentesaudavel.api.ApiClient;
 import br.com.grupo7.mentesaudavel.model.HistoricoItem;
 
 public class DashboardActivity extends AppCompatActivity {
+    private ApiClient apiClient;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
         getHistorico();
+
+        apiClient = new ApiClient();
+        apiClient.getUsuarios();
     }
 
     @Override
