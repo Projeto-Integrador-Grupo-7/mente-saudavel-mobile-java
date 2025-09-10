@@ -11,13 +11,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import br.com.grupo7.mentesaudavel.R;
-import br.com.grupo7.mentesaudavel.model.HistoricoItem;
+import br.com.grupo7.mentesaudavel.model.Questionario;
 
 public class HistoricoAdapter extends RecyclerView.Adapter<HistoricoAdapter.ViewHolder> {
-    private final List<HistoricoItem> historicoDados;
+    private final List<Questionario> listaQuestionariosRespondidos;
 
-    public HistoricoAdapter(List<HistoricoItem> historicoDados) {
-        this.historicoDados = historicoDados;
+    public HistoricoAdapter(List<Questionario> listaQuestionariosRespondidos) {
+        this.listaQuestionariosRespondidos = listaQuestionariosRespondidos;
     }
 
     @NonNull
@@ -30,25 +30,25 @@ public class HistoricoAdapter extends RecyclerView.Adapter<HistoricoAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull HistoricoAdapter.ViewHolder holder, int position) {
-        HistoricoItem historicoItem = historicoDados.get(position);
-        holder.txtHistoricoData.setText(historicoItem.data);
-        holder.txtHistoricoResultado.setText(historicoItem.resultado);
-        holder.txtHistoricoPontuacao.setText(historicoItem.pontuacao);
+        Questionario questionario = listaQuestionariosRespondidos.get(position);
+        holder.txtQuestionarioData.setText(questionario.dataEnvio);
+        holder.txtQuestionarioResultado.setText(questionario.resultado);
+        holder.txtQuestionarioPontuacao.setText(questionario.pontuacao);
     }
 
     @Override
     public int getItemCount() {
-        return historicoDados.size();
+        return listaQuestionariosRespondidos.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView txtHistoricoData, txtHistoricoResultado, txtHistoricoPontuacao;
+        TextView txtQuestionarioData, txtQuestionarioResultado, txtQuestionarioPontuacao;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            txtHistoricoData = itemView.findViewById(R.id.txtHistoricoData);
-            txtHistoricoResultado = itemView.findViewById(R.id.txtHistoricoResultado);
-            txtHistoricoPontuacao = itemView.findViewById(R.id.txtHistoricoPontuacao);
+            txtQuestionarioData = itemView.findViewById(R.id.txtQuestionarioData);
+            txtQuestionarioResultado = itemView.findViewById(R.id.txtQuestionarioResultado);
+            txtQuestionarioPontuacao = itemView.findViewById(R.id.txtQuestionarioPontuacao);
         }
     }
 }

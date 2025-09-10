@@ -12,7 +12,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/txtHistoricoData"
+            android:id="@+id/txtQuestionarioData"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="28/08/2025"
@@ -20,17 +20,17 @@
             android:textSize="16sp"/>
 
         <TextView
-            android:id="@+id/txtHistoricoResultado"
+            android:id="@+id/txtQuestionarioResultado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Resultado: Ansiedade Moderada"
+            android:text="Resultado: Sofrimento Não Identificado"
             android:textSize="14sp"/>
 
         <TextView
-            android:id="@+id/txtHistoricoPontuacao"
+            android:id="@+id/txtQuestionarioPontuacao"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pontuação: 15/30"
+            android:text="Pontuação: 0"
             android:textSize="14sp"/>
 
     </LinearLayout>

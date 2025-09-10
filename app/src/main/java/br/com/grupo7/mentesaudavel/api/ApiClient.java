@@ -1,39 +1,38 @@
 package br.com.grupo7.mentesaudavel.api;
 
+import android.app.Activity;
 import android.util.Log;
+import android.widget.Toast;
 
-import java.io.IOException;
-
-import okhttp3.*;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
     private static final String BASE_URL = "http://10.0.2.2:5014/api/";
-    private final OkHttpClient client;
+    private static ApiInterface apiInterface;
 
-    public ApiClient() {
-        client = new OkHttpClient();
+    public static ApiInterface getApiInterface() {
+        if (apiInterface == null) {
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl(BASE_URL)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+
+            apiInterface = retrofit.create(ApiInterface.class);
+        }
+        return apiInterface;
     }
 
-    public void getUsuarios() {
-        Request request = new Request.Builder()
-                .url(BASE_URL + "usuarios")
-                .build();
+    public static void tratarErroHttp(Activity activity, int codigo) {
+        activity.runOnUiThread(() -> {
+            Toast.makeText(activity, "Erro no servidor: " + codigo, Toast.LENGTH_LONG).show();
+        });
+    }
 
-        client.newCall(request).enqueue(new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-                Log.e("API", "Erro: " + e.getMessage());
-            }
-
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                if (response.isSuccessful()) {
-                    String resposta = response.body().string();
-                    Log.d("API", "Resposta: " + resposta);
-                } else {
-                    Log.e("API", "Erro HTTP: " + response.code());
-                }
-            }
+    public static void tratarFalhaConexao(Activity activity, Throwable error) {
+        activity.runOnUiThread(() -> {
+            Log.e("API", "Falha na requisição: " + error.getMessage());
+            Toast.makeText(activity, "Não foi possível estabelecer uma conexão com o servidor. Por favor, tente novamente mais tarde", Toast.LENGTH_LONG).show();
         });
     }
 }
