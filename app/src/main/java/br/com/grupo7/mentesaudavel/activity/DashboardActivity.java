@@ -7,6 +7,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
+import android.widget.Button;
+
 import java.util.List;
 
 import br.com.grupo7.mentesaudavel.R;
@@ -22,6 +25,14 @@ public class DashboardActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+
+        Button btnQuestionario = findViewById(R.id.btnQuestionario);
+        btnQuestionario.setOnClickListener(v -> {
+            Intent intent = new Intent(DashboardActivity.this, QuestionarioActivity.class);
+            startActivity(intent);
+        });
+
+
 
         getQuestionariosRespondidos();
     }

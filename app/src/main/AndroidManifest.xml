@@ -13,24 +13,36 @@
         android:theme="@style/Theme.MenteSaudavel"
         android:usesCleartextTraffic="true">
 
+        <!-- Activity de cadastro interna -->
         <activity
             android:name=".activity.CadastroActivity"
-            android:theme="@style/Theme.MenteSaudavel.NoActionBar" />
+            android:theme="@style/Theme.MenteSaudavel.NoActionBar"
+            android:exported="false" />
 
-
+        <!-- Activity de login com intent-filter -->
         <activity
             android:name=".activity.LoginActivity"
             android:exported="true"
-            android:theme="@style/Theme.MenteSaudavel.NoActionBar" >
+            android:theme="@style/Theme.MenteSaudavel.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.HomeActivity" />
+        <!-- Activities internas -->
+        <activity
+            android:name=".activity.HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.DashboardActivity"
+            android:exported="false" />
 
-        <activity android:name=".activity.DashboardActivity" />
+        <!-- Questionário, não exportado pois só é acessado dentro do app -->
+        <activity
+            android:name=".activity.QuestionarioActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>

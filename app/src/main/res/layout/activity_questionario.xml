@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Responda as perguntas abaixo:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Perguntas 1 até 20 -->
+        <!-- Cada pergunta tem um TextView + RadioGroup -->
+
+        <!-- Pergunta 1 -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="1- Você tem dores de cabeça frequentes?" />
+        <RadioGroup android:id="@+id/q1" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:orientation="horizontal">
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Sim" />
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Não" />
+        </RadioGroup>
+
+        <!-- Pergunta 2 -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="2- Tem falta de apetite?" />
+        <RadioGroup android:id="@+id/q2" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:orientation="horizontal">
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Sim" />
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Não" />
+        </RadioGroup>
+
+        <!-- Pergunta 3 -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="3- Dorme mal?" />
+        <RadioGroup android:id="@+id/q3" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:orientation="horizontal">
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Sim" />
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Não" />
+        </RadioGroup>
+
+        <!-- Pergunta 4 -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="4- Assusta-se com facilidade?" />
+        <RadioGroup android:id="@+id/q4" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:orientation="horizontal">
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Sim" />
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Não" />
+        </RadioGroup>
+
+        <!-- Pergunta 5 -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="5- Tem tremores nas mãos?" />
+        <RadioGroup android:id="@+id/q5" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:orientation="horizontal">
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Sim" />
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Não" />
+        </RadioGroup>
+
+        <!-- Pergunta 6 -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="6- Sente-se nervoso(a), tenso(a) ou preocupado(a)?" />
+        <RadioGroup android:id="@+id/q6" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:orientation="horizontal">
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Sim" />
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Não" />
+        </RadioGroup>
+
+        <!-- Pergunta 7 -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="7- Tem má digestão?" />
+        <RadioGroup android:id="@+id/q7" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:orientation="horizontal">
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Sim" />
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Não" />
+        </RadioGroup>
+
+        <!-- Pergunta 8 -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="8- Tem dificuldades de pensar com clareza?" />
+        <RadioGroup android:id="@+id/q8" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:orientation="horizontal">
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Sim" />
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Não" />
+        </RadioGroup>
+
+        <!-- Pergunta 9 -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="9- Tem se sentido triste ultimamente?" />
+        <RadioGroup android:id="@+id/q9" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:orientation="horizontal">
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Sim" />
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Não" />
+        </RadioGroup>
+
+        <!-- Pergunta 10 -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="10- Tem chorado mais do que de costume?" />
+        <RadioGroup android:id="@+id/q10" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:orientation="horizontal">
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Sim" />
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Não" />
+        </RadioGroup>
+
+        <!-- Pergunta 11 -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="11- Encontra dificuldades para realizar com satisfação suas atividades diárias?" />
+        <RadioGroup android:id="@+id/q11" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:orientation="horizontal">
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Sim" />
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Não" />
+        </RadioGroup>
+
+        <!-- Pergunta 12 -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="12- Tem dificuldades para tomar decisões?" />
+        <RadioGroup android:id="@+id/q12" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:orientation="horizontal">
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Sim" />
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Não" />
+        </RadioGroup>
+
+        <!-- Pergunta 13 -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="13- Tem dificuldades no serviço (seu trabalho é penoso, causa-lhe sofrimento?)" />
+        <RadioGroup android:id="@+id/q13" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:orientation="horizontal">
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Sim" />
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Não" />
+        </RadioGroup>
+
+        <!-- Pergunta 14 -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="14- É incapaz de desempenhar um papel útil em sua vida?" />
+        <RadioGroup android:id="@+id/q14" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:orientation="horizontal">
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Sim" />
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Não" />
+        </RadioGroup>
+
+        <!-- Pergunta 15 -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="15- Tem perdido o interesse pelas coisas?" />
+        <RadioGroup android:id="@+id/q15" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:orientation="horizontal">
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Sim" />
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Não" />
+        </RadioGroup>
+
+        <!-- Pergunta 16 -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="16- Você se sente uma pessoa inútil, sem préstimo?" />
+        <RadioGroup android:id="@+id/q16" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:orientation="horizontal">
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Sim" />
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Não" />
+        </RadioGroup>
+
+        <!-- Pergunta 17 -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="17- Tem tido ideia de acabar com a vida?" />
+        <RadioGroup android:id="@+id/q17" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:orientation="horizontal">
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Sim" />
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Não" />
+        </RadioGroup>
+
+        <!-- Pergunta 18 -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="18- Sente-se cansado(a) o tempo todo?" />
+        <RadioGroup android:id="@+id/q18" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:orientation="horizontal">
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Sim" />
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Não" />
+        </RadioGroup>
+
+        <!-- Pergunta 19 -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="19- Você se cansa com facilidade?" />
+        <RadioGroup android:id="@+id/q19" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:orientation="horizontal">
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Sim" />
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Não" />
+        </RadioGroup>
+
+        <!-- Pergunta 20 -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="20- Tem sensações desagradáveis no estômago?" />
+        <RadioGroup android:id="@+id/q20" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:orientation="horizontal">
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Sim" />
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Não" />
+        </RadioGroup>
+
+        <!-- Botão Enviar -->
+        <Button
+            android:id="@+id/btnEnviar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enviar"
+            android:layout_marginTop="24dp" />
+
+        <!-- Resultado -->
+        <TextView
+            android:id="@+id/txtResultado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Resultado aparecerá aqui"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="16dp" />
+
+    </LinearLayout>
+</ScrollView>
