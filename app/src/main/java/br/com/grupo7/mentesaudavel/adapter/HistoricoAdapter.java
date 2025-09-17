@@ -32,7 +32,7 @@ public class HistoricoAdapter extends RecyclerView.Adapter<HistoricoAdapter.View
     public void onBindViewHolder(@NonNull HistoricoAdapter.ViewHolder holder, int position) {
         Questionario questionario = listaQuestionariosRespondidos.get(position);
         holder.txtQuestionarioData.setText(questionario.dataEnvio);
-        holder.txtQuestionarioResultado.setText(questionario.resultado);
+        holder.txtQuestionarioResultado.setText(questionario.estratificacao.getDescricao());
         holder.txtQuestionarioPontuacao.setText(questionario.pontuacao);
     }
 
