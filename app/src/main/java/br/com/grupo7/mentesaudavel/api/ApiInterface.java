@@ -17,6 +17,6 @@ public interface ApiInterface {
     @POST("dashboard/graficoPizza")
     Call<Map<String, Integer>> getQtdeUsuariosPorEstratificacao(@Body DashboardRequest request);
 
-    @POST("questionario/responder")
+    @POST("questionarios")
     Call<Void> enviarQuestionario(@Body QuestionarioRequest request);
 }
