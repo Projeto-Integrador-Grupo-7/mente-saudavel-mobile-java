@@ -36,9 +36,12 @@ dependencies {
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.recyclerview)
+    implementation(libs.activity)
+    implementation(libs.constraintlayout)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
     implementation("com.squareup.retrofit2:retrofit:3.0.0")
     implementation("com.squareup.retrofit2:converter-gson:3.0.0")
+    implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
 }

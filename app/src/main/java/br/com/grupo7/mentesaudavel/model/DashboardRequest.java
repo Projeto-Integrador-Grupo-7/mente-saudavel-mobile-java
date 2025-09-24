@@ -9,6 +9,8 @@ public class DashboardRequest {
     private String Genero;
     private Integer Idade;
 
+    public DashboardRequest() {}
+
     public DashboardRequest(String usuarioId) {
         this.UsuarioId = usuarioId;
     }
