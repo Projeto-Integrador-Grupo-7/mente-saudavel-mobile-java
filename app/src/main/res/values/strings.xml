@@ -20,5 +20,5 @@
     <string name="esqueciMinhaSenha">Esqueci minha senha</string>
     <!-- Mensagens -->
     <string name="msgBoasVindas">Bem vindo ao sistema Mente Saudável!</string>
-    <string name="msgApresentacao">O sistema tem como objetivo monitorar a saúde mental dos trabalhadores empregando o questionário Self-Reporting Questionnaire-20 (SRQ-20).  Sinta-se a vontade para responder o questionário. As respostas serão utilizadas em relatórios, médias e gráficos para análise de métricas, porém seu nome nunca será divulgado.</string>
+    <string name="msgApresentacao">O sistema tem como objetivo monitorar a saúde mental dos trabalhadores empregando o questionário Self-Reporting Questionnaire-20 (SRQ-20).\n\nSinta-se a vontade para responder o questionário. As respostas serão utilizadas em relatórios, médias e gráficos para análise de métricas, porém seu nome nunca será divulgado.</string>
 </resources>
