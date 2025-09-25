@@ -1,17 +1,21 @@
 package br.com.grupo7.mentesaudavel.model;
 
-import java.util.Date;
-
 public class DashboardRequest {
     private String UsuarioId;
-    private Date DataInicio;
-    private Date DataFim;
-    private String Genero;
-    private Integer Idade;
+    private String DataInicio;
+    private String DataFim;
+    private char Genero;
+    private int Idade;
 
-    public DashboardRequest() {}
+    public DashboardRequest() {
+        this.UsuarioId = "daba7458-bbac-4643-8b13-359e68440b5e";
+    }
 
-    public DashboardRequest(String usuarioId) {
-        this.UsuarioId = usuarioId;
+    public DashboardRequest(String dataInicio, String dataFim, int idade, char genero) {
+        this.UsuarioId = "daba7458-bbac-4643-8b13-359e68440b5e";
+        this.DataInicio = dataInicio;
+        this.DataFim = dataFim;
+        this.Idade = idade;
+        this.Genero = genero;
     }
 }

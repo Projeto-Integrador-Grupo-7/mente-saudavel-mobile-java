@@ -10,7 +10,15 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
@@ -36,19 +44,24 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class DashboardActivity extends AppCompatActivity {
+    EditText filtroDataInicio, filtroDataFim, filtroIdade;
+    Spinner filtroGenero;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
-        Button btnQuestionario = findViewById(R.id.btnQuestionario);
-        btnQuestionario.setOnClickListener(v -> {
-            Intent intent = new Intent(DashboardActivity.this, QuestionarioActivity.class);
-            startActivity(intent);
-        });
+        filtroDataInicio = findViewById(R.id.filtroDataInicio);
+        filtroDataFim = findViewById(R.id.filtroDataFim);
+        filtroIdade = findViewById(R.id.filtroIdade);
+        filtroGenero = findViewById(R.id.filtroGenero);
 
-        getQuestionariosRespondidos();
-        getQtdeUsuariosPorEstratificacao();
+        configurarFiltros();
+        mapearBotoes();
+
+        getQuestionariosRespondidos(new DashboardRequest());
+        getQtdeUsuariosPorEstratificacao(new DashboardRequest());
     }
 
     @Override
@@ -57,12 +70,87 @@ public class DashboardActivity extends AppCompatActivity {
         return true;
     }
 
+    // region FILTROS
+    private void configurarFiltros() {
+        LinearLayout painelFiltros = findViewById(R.id.painelFiltros);
+
+        ImageButton btnFiltros = findViewById(R.id.btnFiltros);
+        btnFiltros.setOnClickListener(v -> {
+            if (painelFiltros.getVisibility() == View.GONE) {
+                painelFiltros.setVisibility(View.VISIBLE);
+            } else {
+                painelFiltros.setVisibility(View.GONE);
+            }
+        });
+
+        configurarSpinner();
+    }
+
+    private void configurarSpinner() {
+        Spinner filtroGenero = findViewById(R.id.filtroGenero);
+        String[] generos = {"Gênero", "Feminino", "Masculino", "Outro"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(
+                this,
+                android.R.layout.simple_spinner_item,
+                generos
+        ) {
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                View view = super.getView(position, convertView, parent);
+                TextView text = view.findViewById(android.R.id.text1);
+                text.setTextColor(Color.WHITE);
+                return view;
+            }
+        };
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        filtroGenero.setAdapter(adapter);
+        filtroGenero.setSelection(0);
+    }
+    // endregion
+
+    // region BOTOES
+    private void mapearBotoes() {
+        Button btnQuestionario = findViewById(R.id.btnQuestionario);
+        btnQuestionario.setOnClickListener(v -> {
+            Intent intent = new Intent(DashboardActivity.this, QuestionarioActivity.class);
+            startActivity(intent);
+        });
+    }
+
+    public void onClickFiltrar(View v) {
+        String dataInicio = filtroDataInicio.getText().toString();
+        String dataFim = filtroDataFim.getText().toString();
+        String stringIdade = filtroIdade.getText().toString();
+        String stringGenero = filtroGenero.getSelectedItem().toString();
+
+        dataInicio = formatarData(dataInicio);
+        dataFim = formatarData(dataFim);
+        int idade = stringIdade.isEmpty() ? 0 : Integer.parseInt(stringIdade);
+        char genero = stringGenero.isEmpty() ? null : stringGenero.charAt(0);
+
+        DashboardRequest request = new DashboardRequest(dataInicio, dataFim, idade, genero);
+
+        getQuestionariosRespondidos(request);
+        getQtdeUsuariosPorEstratificacao(request);
+    }
+
+    private String formatarData(String data) {
+        if (data.isEmpty()){
+            return data;
+        }
+
+        String[] dataSplitada = data.split("/");
+
+        data = dataSplitada[2] + "-" + dataSplitada[1] + "-" + dataSplitada[0];
+
+        return data;
+    }
+    // endregion
 
     // region HISTORICO
-    private void getQuestionariosRespondidos() {
+    private void getQuestionariosRespondidos(DashboardRequest request) {
         ApiInterface apiInterface = ApiClient.getApiInterface();
-
-        DashboardRequest request = new DashboardRequest("daba7458-bbac-4643-8b13-359e68440b5e");
 
         Call<List<Questionario>> call = apiInterface.getQuestionariosRespondidos(request);
 
@@ -101,10 +189,8 @@ public class DashboardActivity extends AppCompatActivity {
     // endregion
 
     // region GRAFICO PIZZA
-    private void getQtdeUsuariosPorEstratificacao() {
+    private void getQtdeUsuariosPorEstratificacao(DashboardRequest request) {
         ApiInterface apiInterface = ApiClient.getApiInterface();
-
-        DashboardRequest request = new DashboardRequest();
 
         Call<Map<String, Integer>> call = apiInterface.getQtdeUsuariosPorEstratificacao(request);
 

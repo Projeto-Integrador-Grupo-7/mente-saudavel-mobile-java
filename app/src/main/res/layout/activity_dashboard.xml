@@ -5,12 +5,105 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
+    <LinearLayout
+        android:id="@+id/painelFiltros"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bluePrimary"
+        android:elevation="2dp"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/bluePrimary"
+            android:elevation="2dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <EditText
+                android:id="@+id/filtroDataInicio"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:ems="10"
+                android:hint="Data Início"
+                android:inputType="date"
+                android:layout_margin="8dp"
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/white" />
+
+            <EditText
+                android:id="@+id/filtroDataFim"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:ems="10"
+                android:hint="Data Fim"
+                android:inputType="date"
+                android:layout_margin="8dp"
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/bluePrimary"
+            android:elevation="2dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <EditText
+                android:id="@+id/filtroIdade"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:ems="10"
+                android:hint="Idade"
+                android:inputType="number"
+                android:layout_margin="8dp"
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/white" />
+
+            <Spinner
+                android:id="@+id/filtroGenero"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_margin="8dp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnFiltrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Filtrar"
+            android:onClick="onClickFiltrar"/>
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/btnFiltros"
+        android:elevation="3dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:backgroundTint="@color/bluePrimary"
+        android:contentDescription="Filtros"
+        android:src="@drawable/ic_filter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvHistorico"
         android:layout_width="match_parent"
         android:layout_height="220dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
         android:scrollbars="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,7 +116,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="40dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="20dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,6 +137,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:orientation="vertical"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -51,15 +145,16 @@
 
         <Button
             android:id="@+id/btnQuestionario"
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:text="@string/questionario" />
+            android:text="@string/questionario"
+            app:cornerRadius="10dp" />
 
         <Button
             android:id="@+id/btnRelatorio"
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:text="@string/relatorio" />
+            android:text="@string/relatorio"
+            app:cornerRadius="10dp" />
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
