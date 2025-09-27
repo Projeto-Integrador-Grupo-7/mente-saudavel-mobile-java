@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -13,13 +14,25 @@
         android:theme="@style/Theme.MenteSaudavel"
         android:usesCleartextTraffic="true">
 
-        <!-- Activity de cadastro interna -->
         <activity
-            android:name=".activity.CadastroActivity"
-            android:theme="@style/Theme.MenteSaudavel.NoActionBar"
+            android:name=".activity.ResultadoActivity"
+            android:exported="false">
+            <!-- Intent filter removido daqui -->
+        </activity>
+
+        <!-- Esta entrada parece ser uma duplicata ou um nome antigo para ResultadoActivity.
+             Se .ResultadoActivity não for uma classe válida ou usada, considere removê-la.
+             Por agora, manterei como está para evitar quebrar algo inesperado. -->
+        <activity
+            android:name=".ResultadoActivity"
             android:exported="false" />
 
-        <!-- Activity de login com intent-filter -->
+        <activity
+            android:name=".activity.CadastroActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MenteSaudavel.NoActionBar" />
+
+        <!-- LoginActivity agora é a tela principal -->
         <activity
             android:name=".activity.LoginActivity"
             android:exported="true"
@@ -30,15 +43,12 @@
             </intent-filter>
         </activity>
 
-        <!-- Activities internas -->
         <activity
             android:name=".activity.HomeActivity"
             android:exported="false" />
         <activity
             android:name=".activity.DashboardActivity"
             android:exported="false" />
-
-        <!-- Questionário, não exportado pois só é acessado dentro do app -->
         <activity
             android:name=".activity.QuestionarioActivity"
             android:exported="false" />

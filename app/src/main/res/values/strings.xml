@@ -20,5 +20,15 @@
     <string name="esqueciMinhaSenha">Esqueci minha senha</string>
     <!-- Mensagens -->
     <string name="msgBoasVindas">Bem vindo ao sistema Mente Saudável!</string>
-    <string name="msgApresentacao">O sistema tem como objetivo monitorar a saúde mental dos trabalhadores empregando o questionário Self-Reporting Questionnaire-20 (SRQ-20).  Sinta-se a vontade para responder o questionário. As respostas serão utilizadas em relatórios, médias e gráficos para análise de métricas, porém seu nome nunca será divulgado.</string>
+    <string name="msgApresentacao">O sistema tem como objetivo monitorar a saúde mental dos trabalhadores empregando o questionário Self-Reporting Questionnaire-20 (SRQ-20).\n\nSinta-se a vontade para responder o questionário. As respostas serão utilizadas em relatórios, médias e gráficos para análise de métricas, porém seu nome nunca será divulgado.</string>
+    <!-- Relatório -->
+    <string name="msgRelatorio">No seu último questionário respondido você obteve 20 pontos, equivalente á estratificação Sofrimento Mental Grave. You need help.</string>
+    <string name="msgQuestionarioNaoEncontrado">Nenhum questionário respondido encontrado.</string>
+    <string name="relatorioErroPontuacao">Erro ao interpretar pontuação: %1$s</string>
+
+    <string name="relatorioBaixo">Parabéns! Seus resultados indicam baixo sofrimento mental. Continue mantendo hábitos saudáveis.</string>
+    <string name="relatorioLeve">Você apresenta sinais leves de sofrimento mental. Considere praticar atividades de autocuidado.</string>
+    <string name="relatorioModerado">Seus resultados indicam sofrimento mental moderado. Procure conversar com alguém de confiança e buscar apoio.</string>
+    <string name="relatorioGrave">Sofrimento mental grave detectado. Recomendamos fortemente procurar um profissional de saúde mental.</string>
+
 </resources>

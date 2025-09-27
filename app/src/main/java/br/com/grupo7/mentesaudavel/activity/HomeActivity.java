@@ -1,13 +1,11 @@
 package br.com.grupo7.mentesaudavel.activity;
+import androidx.appcompat.app.AppCompatActivity;
+import br.com.grupo7.mentesaudavel.R;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import br.com.grupo7.mentesaudavel.R;
 
 public class HomeActivity extends AppCompatActivity {
     @Override
@@ -22,8 +20,13 @@ public class HomeActivity extends AppCompatActivity {
         return true;
     }
 
-    public void redirectToDashboard(View v) {
-        Intent telaDashboard = new Intent(HomeActivity.this, DashboardActivity.class);
-        startActivity(telaDashboard);
+    public void redirectToQuestionario(View view) {
+        Intent intent = new Intent(this, QuestionarioActivity.class);
+        startActivity(intent);
+    }
+
+    public void redirectToDashboard(View view) {
+        Intent intent = new Intent(this, DashboardActivity.class);
+        startActivity(intent);
     }
 }
