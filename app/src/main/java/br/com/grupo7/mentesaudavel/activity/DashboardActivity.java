@@ -1,5 +1,6 @@
 package br.com.grupo7.mentesaudavel.activity;
 
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -13,7 +14,6 @@ import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -46,11 +46,15 @@ import retrofit2.Response;
 public class DashboardActivity extends AppCompatActivity {
     EditText filtroDataInicio, filtroDataFim, filtroIdade;
     Spinner filtroGenero;
+    String usuarioId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+
+        SharedPreferences prefs = getSharedPreferences("AppPrefs", MODE_PRIVATE);
+        usuarioId = prefs.getString("UsuarioId", null);
 
         filtroDataInicio = findViewById(R.id.filtroDataInicio);
         filtroDataFim = findViewById(R.id.filtroDataFim);
@@ -58,10 +62,9 @@ public class DashboardActivity extends AppCompatActivity {
         filtroGenero = findViewById(R.id.filtroGenero);
 
         configurarFiltros();
-        mapearBotoes();
 
-        getQuestionariosRespondidos(new DashboardRequest());
-        getQtdeUsuariosPorEstratificacao(new DashboardRequest());
+        getQuestionariosRespondidos(new DashboardRequest(usuarioId));
+        getQtdeUsuariosPorEstratificacao(new DashboardRequest(usuarioId));
     }
 
     @Override
@@ -110,12 +113,14 @@ public class DashboardActivity extends AppCompatActivity {
     // endregion
 
     // region BOTOES
-    private void mapearBotoes() {
-        Button btnQuestionario = findViewById(R.id.btnQuestionario);
-        btnQuestionario.setOnClickListener(v -> {
-            Intent intent = new Intent(DashboardActivity.this, QuestionarioActivity.class);
-            startActivity(intent);
-        });
+    public void redirectToQuestionario(View v) {
+        Intent telaQuestionario = new Intent(DashboardActivity.this, QuestionarioActivity.class);
+        startActivity(telaQuestionario);
+    }
+
+    public void redirectToRelatorio(View v) {
+        Intent telaRelatorio = new Intent(DashboardActivity.this, RelatorioActivity.class);
+        startActivity(telaRelatorio);
     }
 
     public void onClickFiltrar(View v) {
@@ -129,7 +134,7 @@ public class DashboardActivity extends AppCompatActivity {
         int idade = stringIdade.isEmpty() ? 0 : Integer.parseInt(stringIdade);
         char genero = stringGenero.isEmpty() ? null : stringGenero.charAt(0);
 
-        DashboardRequest request = new DashboardRequest(dataInicio, dataFim, idade, genero);
+        DashboardRequest request = new DashboardRequest(usuarioId, dataInicio, dataFim, idade, genero);
 
         getQuestionariosRespondidos(request);
         getQtdeUsuariosPorEstratificacao(request);

@@ -7,12 +7,12 @@ public class DashboardRequest {
     private char Genero;
     private int Idade;
 
-    public DashboardRequest() {
-        this.UsuarioId = "daba7458-bbac-4643-8b13-359e68440b5e";
+    public DashboardRequest(String usuarioId) {
+        this.UsuarioId = usuarioId;
     }
 
-    public DashboardRequest(String dataInicio, String dataFim, int idade, char genero) {
-        this.UsuarioId = "daba7458-bbac-4643-8b13-359e68440b5e";
+    public DashboardRequest(String usuarioId, String dataInicio, String dataFim, int idade, char genero) {
+        this.UsuarioId = usuarioId;
         this.DataInicio = dataInicio;
         this.DataFim = dataFim;
         this.Idade = idade;

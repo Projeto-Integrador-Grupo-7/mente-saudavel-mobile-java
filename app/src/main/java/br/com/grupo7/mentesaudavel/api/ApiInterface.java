@@ -10,19 +10,23 @@ import br.com.grupo7.mentesaudavel.model.Usuario;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
-import java.util.Map;
 
 public interface ApiInterface {
+    @POST("usuarios")
+    Call<Void> cadastrarUsuario(@Body Usuario usuario);
+
+    @POST("usuarios/login")
+    Call<Usuario> logarUsuarioComMapa(@Body Map<String, String> dadosLogin);
+
+    @POST("questionarios")
+    Call<Void> enviarQuestionario(@Body QuestionarioRequest request);
+
     @POST("dashboard/historico")
     Call<List<Questionario>> getQuestionariosRespondidos(@Body DashboardRequest request);
 
     @POST("dashboard/graficoPizza")
     Call<Map<String, Integer>> getQtdeUsuariosPorEstratificacao(@Body DashboardRequest request);
 
-    @POST("questionarios")
-    Call<Void> enviarQuestionario(@Body QuestionarioRequest request);
-    @POST("usuarios")
-    Call<Void> cadastrarUsuario(@Body Usuario usuario);
-    @POST("usuarios/login")
-    Call<Usuario> logarUsuarioComMapa(@Body Map<String, String> dadosLogin);
+    @POST("questionarios/relatorio")
+    Call<Questionario> getUltimoQuestionarioRespondido(@Body String usuarioId);
 }

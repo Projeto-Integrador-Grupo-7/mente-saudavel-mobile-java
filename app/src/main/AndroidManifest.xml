@@ -15,24 +15,10 @@
         android:usesCleartextTraffic="true">
 
         <activity
-            android:name=".activity.ResultadoActivity"
-            android:exported="false">
-            <!-- Intent filter removido daqui -->
-        </activity>
-
-        <!-- Esta entrada parece ser uma duplicata ou um nome antigo para ResultadoActivity.
-             Se .ResultadoActivity não for uma classe válida ou usada, considere removê-la.
-             Por agora, manterei como está para evitar quebrar algo inesperado. -->
-        <activity
-            android:name=".ResultadoActivity"
-            android:exported="false" />
-
-        <activity
             android:name=".activity.CadastroActivity"
             android:exported="false"
             android:theme="@style/Theme.MenteSaudavel.NoActionBar" />
 
-        <!-- LoginActivity agora é a tela principal -->
         <activity
             android:name=".activity.LoginActivity"
             android:exported="true"
@@ -46,11 +32,21 @@
         <activity
             android:name=".activity.HomeActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".activity.QuestionarioActivity"
+            android:exported="false" />
+
         <activity
             android:name=".activity.DashboardActivity"
             android:exported="false" />
+
         <activity
-            android:name=".activity.QuestionarioActivity"
+            android:name=".activity.ResultadoActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".activity.RelatorioActivity"
             android:exported="false" />
 
     </application>

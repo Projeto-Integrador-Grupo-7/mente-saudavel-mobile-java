@@ -22,7 +22,7 @@
     <string name="msgBoasVindas">Bem vindo ao sistema Mente Saudável!</string>
     <string name="msgApresentacao">O sistema tem como objetivo monitorar a saúde mental dos trabalhadores empregando o questionário Self-Reporting Questionnaire-20 (SRQ-20).\n\nSinta-se a vontade para responder o questionário. As respostas serão utilizadas em relatórios, médias e gráficos para análise de métricas, porém seu nome nunca será divulgado.</string>
     <!-- Relatório -->
-    <string name="msgRelatorio">No seu último questionário respondido você obteve 20 pontos, equivalente á estratificação Sofrimento Mental Grave. You need help.</string>
+    <string name="msgRelatorio">No seu último questionário respondido você obteve 20 pontos, equivalente á estratificação Sofrimento Mental Grave.</string>
     <string name="msgQuestionarioNaoEncontrado">Nenhum questionário respondido encontrado.</string>
     <string name="relatorioErroPontuacao">Erro ao interpretar pontuação: %1$s</string>
 
