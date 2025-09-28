@@ -91,7 +91,7 @@ public class DashboardActivity extends AppCompatActivity {
 
     private void configurarSpinner() {
         Spinner filtroGenero = findViewById(R.id.filtroGenero);
-        String[] generos = {"Gênero", "Feminino", "Masculino", "Outro"};
+        String[] generos = {"Gênero", "Feminino", "Masculino" };
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 this,
                 android.R.layout.simple_spinner_item,
@@ -110,6 +110,35 @@ public class DashboardActivity extends AppCompatActivity {
         filtroGenero.setAdapter(adapter);
         filtroGenero.setSelection(0);
     }
+
+    public void onClickFiltrar(View v) {
+        String dataInicio = filtroDataInicio.getText().toString();
+        String dataFim = filtroDataFim.getText().toString();
+        String stringIdade = filtroIdade.getText().toString();
+        String stringGenero = filtroGenero.getSelectedItem().toString();
+
+        dataInicio = formatarData(dataInicio);
+        dataFim = formatarData(dataFim);
+        int idade = stringIdade.isEmpty() ? 0 : Integer.parseInt(stringIdade);
+        String genero = stringGenero.isEmpty() || stringGenero.equals("Gênero") ? null : stringGenero.substring(0, 1);
+
+        DashboardRequest request = new DashboardRequest(usuarioId, dataInicio, dataFim, idade, genero);
+
+        getQuestionariosRespondidos(request);
+        getQtdeUsuariosPorEstratificacao(request);
+    }
+
+    private String formatarData(String data) {
+        if (data.isEmpty()){
+            return null;
+        }
+
+        String[] dataSplitada = data.split("/");
+
+        data = dataSplitada[2] + "-" + dataSplitada[1] + "-" + dataSplitada[0];
+
+        return data;
+    }
     // endregion
 
     // region BOTOES
@@ -121,35 +150,6 @@ public class DashboardActivity extends AppCompatActivity {
     public void redirectToRelatorio(View v) {
         Intent telaRelatorio = new Intent(DashboardActivity.this, RelatorioActivity.class);
         startActivity(telaRelatorio);
-    }
-
-    public void onClickFiltrar(View v) {
-        String dataInicio = filtroDataInicio.getText().toString();
-        String dataFim = filtroDataFim.getText().toString();
-        String stringIdade = filtroIdade.getText().toString();
-        String stringGenero = filtroGenero.getSelectedItem().toString();
-
-        dataInicio = formatarData(dataInicio);
-        dataFim = formatarData(dataFim);
-        int idade = stringIdade.isEmpty() ? 0 : Integer.parseInt(stringIdade);
-        char genero = stringGenero.isEmpty() ? null : stringGenero.charAt(0);
-
-        DashboardRequest request = new DashboardRequest(usuarioId, dataInicio, dataFim, idade, genero);
-
-        getQuestionariosRespondidos(request);
-        getQtdeUsuariosPorEstratificacao(request);
-    }
-
-    private String formatarData(String data) {
-        if (data.isEmpty()){
-            return data;
-        }
-
-        String[] dataSplitada = data.split("/");
-
-        data = dataSplitada[2] + "-" + dataSplitada[1] + "-" + dataSplitada[0];
-
-        return data;
     }
     // endregion
 

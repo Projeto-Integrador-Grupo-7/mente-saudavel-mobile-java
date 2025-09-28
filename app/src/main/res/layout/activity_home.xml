@@ -56,7 +56,8 @@
             android:backgroundTint="#0E4D92"
             android:onClick="redirectToQuestionario"
             android:text="@string/questionario"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            app:cornerRadius="10dp"/>
 
         <Button
             android:id="@+id/btnDashboard"
@@ -66,7 +67,8 @@
             android:backgroundTint="#0E4D92"
             android:onClick="redirectToDashboard"
             android:text="@string/dashboard"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            app:cornerRadius="10dp"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

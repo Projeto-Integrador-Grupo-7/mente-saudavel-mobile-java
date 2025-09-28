@@ -6,45 +6,57 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-    <LinearLayout
-        android:id="@+id/layoutHeader"
+    <TextView
+        android:id="@+id/textViewHeaderApplicationName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="60dp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="65dp">
+        android:layout_marginTop="80dp"
+        android:text="@string/relatorio"
+        android:textAlignment="center"
+        android:textColor="#0E4D92"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textViewHeaderApplicationName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/relatorio"
-            android:textAlignment="center"
-            android:textColor="#0E4D92"
-            android:textSize="22sp"
-            android:textStyle="bold" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/layoutBody"
+    <TextView
+        android:id="@+id/txtEstratificacao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="50dp"
-        app:layout_constraintTop_toBottomOf="@+id/layoutHeader"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp">
+        android:layout_marginTop="40dp"
+        android:text="Sofrimento Mental Grave"
+        android:textAlignment="center"
+        android:textColor="#0E4D92"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHeaderApplicationName" />
 
-        <TextView
-            android:id="@+id/textViewBodyRelatorio"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/msgRelatorio"
-            android:textColor="@android:color/black"
-            android:textSize="18sp" />
-    </LinearLayout>
+    <TextView
+        android:id="@+id/textViewBodyRelatorio"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/msgRelatorio"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEstratificacao" />
+
+    <TextView
+        android:id="@+id/txtMensagemSofrimento"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/sofrimentoGrave"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBodyRelatorio" />
 
     <LinearLayout
         android:id="@+id/layoutFooter"
@@ -55,8 +67,7 @@
         android:padding="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layoutBody">
+        app:layout_constraintStart_toStartOf="parent">
 
         <Button
             android:id="@+id/btnDashboard"
@@ -66,7 +77,8 @@
             android:backgroundTint="#0E4D92"
             android:onClick="redirectToDashboard"
             android:text="@string/dashboard"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            app:cornerRadius="10dp" />
 
         <Button
             android:id="@+id/btnPaginaInicial"
@@ -77,7 +89,8 @@
             android:backgroundTint="#0E4D92"
             android:onClick="redirectToPaginaInicial"
             android:text="@string/home"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            app:cornerRadius="10dp" />
 
     </LinearLayout>
 

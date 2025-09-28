@@ -82,8 +82,14 @@
             android:id="@+id/btnFiltrar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="50dp"
+            android:textSize="14dp"
+            android:padding="0dp"
+            android:backgroundTint="@color/blueSecondary"
+            android:onClick="onClickFiltrar"
             android:text="Filtrar"
-            android:onClick="onClickFiltrar"/>
+            app:cornerRadius="10dp" />
     </LinearLayout>
 
     <ImageButton
@@ -91,9 +97,10 @@
         android:elevation="3dp"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:backgroundTint="@color/bluePrimary"
+        android:backgroundTint="@color/blueSecondary"
         android:contentDescription="Filtros"
         android:src="@drawable/ic_filter"
+        app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:tint="@color/white" />

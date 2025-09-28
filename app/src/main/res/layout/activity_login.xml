@@ -86,7 +86,7 @@
             android:layout_height="wrap_content"
             android:onClick="logar"
             android:text="@string/login"
-            app:cornerRadius="15dp" />
+            app:cornerRadius="10dp" />
 
         <Button
             android:id="@+id/btnCadastrar"
@@ -94,7 +94,7 @@
             android:layout_height="wrap_content"
             android:onClick="redirectToCadastro"
             android:text="@string/cadastrar"
-            app:cornerRadius="15dp" />
+            app:cornerRadius="10dp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

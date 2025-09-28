@@ -109,8 +109,8 @@
 
         <RadioGroup
             android:id="@+id/rgGenero"
-            android:layout_width="338dp"
-            android:layout_height="48dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <RadioButton
@@ -148,7 +148,7 @@
             android:layout_height="wrap_content"
             android:onClick="redirectToLogin"
             android:text="@string/jaPossuoConta"
-            app:cornerRadius="15dp" />
+            app:cornerRadius="10dp" />
 
         <Space
             android:layout_width="0dp"
@@ -161,7 +161,7 @@
             android:layout_height="wrap_content"
             android:onClick="cadastrar"
             android:text="@string/cadastrar"
-            app:cornerRadius="15dp" />
+            app:cornerRadius="10dp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

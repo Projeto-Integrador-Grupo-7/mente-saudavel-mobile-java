@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
@@ -64,7 +65,9 @@ public class RelatorioActivity extends AppCompatActivity {
     private void popularRelatorio(Questionario questionario) {
         runOnUiThread(() -> {
 
+            TextView textEstratificacao = this.findViewById(R.id.txtEstratificacao);
             TextView textRelatorio = this.findViewById(R.id.textViewBodyRelatorio);
+            TextView textMensagemSofrimento = this.findViewById(R.id.txtMensagemSofrimento);
 
             String msgErro = validaDadosQuestionario(questionario);
             if (msgErro != null) {
@@ -72,20 +75,27 @@ public class RelatorioActivity extends AppCompatActivity {
                 return;
             }
 
-            int pontos = parseInt(questionario.pontuacao);
-
             String mensagem;
-            if (pontos <= 5) {
-                mensagem = getString(R.string.relatorioBaixo);
-            } else if (pontos <= 10) {
-                mensagem = getString(R.string.relatorioLeve);
-            } else if (pontos <= 15) {
-                mensagem = getString(R.string.relatorioModerado);
+            String pontuacao = questionario.pontuacao;
+            int estratificacao = questionario.estratificacao.getValor();
+            String estratificacaoDescricao = questionario.estratificacao.getDescricao();
+            String dataEnvio = questionario.dataEnvio;
+
+            if (estratificacao == 3) {
+                mensagem = getString(R.string.sofrimentoGrave);
+            } else if (estratificacao == 2) {
+                mensagem = getString(R.string.sofrimentoModerado);
+            } else if (estratificacao == 1) {
+                mensagem = getString(R.string.sofrimentoLeve);
             } else {
-                mensagem = getString(R.string.relatorioGrave);
+                mensagem = getString(R.string.sofrimentoNaoIdentificado);
             }
 
-            textRelatorio.setText(mensagem);
+            String msgRelatorio = getString(R.string.msgRelatorio, dataEnvio, pontuacao, estratificacaoDescricao);
+
+            textEstratificacao.setText(questionario.estratificacao.getDescricao());
+            textRelatorio.setText(Html.fromHtml(msgRelatorio, Html.FROM_HTML_MODE_LEGACY));
+            textMensagemSofrimento.setText(mensagem);
         });
     }
 

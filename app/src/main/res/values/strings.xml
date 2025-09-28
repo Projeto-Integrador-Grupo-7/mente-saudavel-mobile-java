@@ -21,14 +21,48 @@
     <!-- Mensagens -->
     <string name="msgBoasVindas">Bem vindo ao sistema Mente Saudável!</string>
     <string name="msgApresentacao">O sistema tem como objetivo monitorar a saúde mental dos trabalhadores empregando o questionário Self-Reporting Questionnaire-20 (SRQ-20).\n\nSinta-se a vontade para responder o questionário. As respostas serão utilizadas em relatórios, médias e gráficos para análise de métricas, porém seu nome nunca será divulgado.</string>
-    <!-- Relatório -->
-    <string name="msgRelatorio">No seu último questionário respondido você obteve 20 pontos, equivalente á estratificação Sofrimento Mental Grave.</string>
-    <string name="msgQuestionarioNaoEncontrado">Nenhum questionário respondido encontrado.</string>
-    <string name="relatorioErroPontuacao">Erro ao interpretar pontuação: %1$s</string>
 
-    <string name="relatorioBaixo">Parabéns! Seus resultados indicam baixo sofrimento mental. Continue mantendo hábitos saudáveis.</string>
-    <string name="relatorioLeve">Você apresenta sinais leves de sofrimento mental. Considere praticar atividades de autocuidado.</string>
-    <string name="relatorioModerado">Seus resultados indicam sofrimento mental moderado. Procure conversar com alguém de confiança e buscar apoio.</string>
-    <string name="relatorioGrave">Sofrimento mental grave detectado. Recomendamos fortemente procurar um profissional de saúde mental.</string>
+    <!-- Relatório -->
+    <string name="msgQuestionarioNaoEncontrado">Nenhum questionário respondido encontrado.</string>
+
+    <string name="msgRelatorio">
+        O último questionário submetido foi no dia <strong>%1$s</strong>. <br />
+        Nele, você obteve <strong>%2$s pontos</strong>,
+        equivalente à estratificação <strong>%3$s</strong>.
+    </string>
+
+    <string name="sofrimentoNaoIdentificado">
+        Parabéns! Seu resultado indica que, no momento, não há sinais relevantes de sofrimento mental.
+        <br />Continue cuidando de sua saúde emocional e física.
+        Mantenha práticas saudáveis no seu dia a dia, como momentos de lazer, boa alimentação,
+        atividades físicas e bons relacionamentos.
+        <br />Se, em algum momento, você sentir necessidade,
+        saiba que buscar ajuda profissional é sempre uma atitude de autocuidado.
+    </string>
+
+    <string name="sofrimentoLeve">
+        Seu resultado indica sinais leves de sofrimento mental.
+        Mesmo que ainda não seja algo grave, é importante estar atento(a) a si mesmo(a).
+        <br />Procure cuidar da sua rotina emocional: pratique atividades que tragam bem-estar, reserve tempo para você e,
+        se possível, converse com pessoas de confiança sobre como se sente.
+        <br />Se o desconforto persistir ou aumentar, buscar apoio psicológico pode ser muito benéfico.
+    </string>
+
+    <string name="sofrimentoModerado">
+        Seu resultado indica sinais moderados de sofrimento mental.
+        <br />Esse é um sinal de que seu bem-estar emocional precisa de atenção.
+        Considere procurar um(a) psicólogo(a) para conversar e receber orientação.
+        Ter alguém capacitado para ajudar nesse momento pode fazer toda a diferença.
+        <br />Não deixe seus sentimentos de lado: cuidar da saúde mental é tão importante quanto cuidar da saúde física.
+    </string>
+
+    <string name="sofrimentoGrave">
+        Seu resultado aponta sinais graves de sofrimento mental.
+        Sabemos que pode ser difícil enfrentar momentos assim, mas é importante lembrar que você não está sozinho(a).
+        <br />Recomendamos que procure o quanto antes o apoio de um(a) profissional da saúde mental, como um(a) psicólogo(a) ou psiquiatra.
+        Eles poderão ouvir você com acolhimento e indicar os melhores caminhos para seu tratamento e recuperação.
+        <br />Pedir ajuda é um ato de coragem e autocuidado.
+        Você merece atenção, cuidado e apoio.
+    </string>
 
 </resources>
